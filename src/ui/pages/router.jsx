@@ -17,11 +17,11 @@ function DummyPage() { // Para nada copie esta idea de la chamba, obviamente lo 
 const AppRouter = createBrowserRouter([
   {
     path: "/",
-    element: <DummyPage />,
+    element: <Dashboard />,
   },
   {
     path: "/help",
-    element: <Dashboard />,
+    element: <DummyPage />,
   },
 ]);
 

@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Header from "../components/Header";
 import GraphComponent from "../components/GraphComponent";
+import Text from '@mui/material/Typography';
 
 function Dashboard() {
   return (
@@ -20,6 +21,7 @@ function Dashboard() {
             <Grid item xs={4}>
               <GraphComponent>
                 <h1>Graph 1</h1>
+                <Text> Hola</Text>
               </GraphComponent>
             </Grid>
             <Grid item xs={4}>
