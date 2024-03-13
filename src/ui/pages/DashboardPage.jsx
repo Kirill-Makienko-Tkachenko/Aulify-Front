@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Header from "../components/Header";
 import GraphComponent from "../components/GraphComponent";
+import CircleGraph from "../components/CircleGraph";
 import Text from '@mui/material/Typography';
 
 function Dashboard() {
@@ -21,7 +22,7 @@ function Dashboard() {
             <Grid item xs={4}>
               <GraphComponent>
                 <h1>Graph 1</h1>
-                <Text> Hola</Text>
+                <CircleGraph number={90} text="Puntuación" />
               </GraphComponent>
             </Grid>
             <Grid item xs={4}>
