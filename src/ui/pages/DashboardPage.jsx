@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Header from "../components/Header";
 import GraphComponent from "../components/GraphComponent";
 import Text from '@mui/material/Typography';
+import FilterComponent from "../components/FilterComponent";
 
 function Dashboard() {
   return (
@@ -38,7 +39,7 @@ function Dashboard() {
             {/* Bottom row of graphs */}
             <Grid item xs={4}>
               <GraphComponent>
-                <h1>Graph 4</h1>
+                <FilterComponent />
               </GraphComponent>
             </Grid>
             <Grid item xs={4}>
