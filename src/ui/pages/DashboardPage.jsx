@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import GraphComponent from "../components/GraphComponent";
 import Text from '@mui/material/Typography';
 import FilterComponent from "../components/FilterComponent";
+import SearchhComponent from "../components/searchComponent";
 
 function Dashboard() {
   return (
@@ -44,7 +45,7 @@ function Dashboard() {
             </Grid>
             <Grid item xs={4}>
               <GraphComponent>
-                <h1>Graph 5</h1>
+                <SearchhComponent />
               </GraphComponent>
             </Grid>
             <Grid item xs={4}>
