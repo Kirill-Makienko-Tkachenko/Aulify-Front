@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 const CircleGraph = ({ number, text }) => {
   const circleStyle = {
-    width: '200px',
-    height: '200px',
+    width: '150px',
+    height: '150px',
     borderRadius: '50%',
     backgroundColor: '#F6BA27', 
     display: 'flex',
