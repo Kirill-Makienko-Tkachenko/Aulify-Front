@@ -1,14 +1,14 @@
+
 // eslint-disable-next-line no-unused-vars
-
-// ComponentBox.jsx
-
 import React from 'react';
 import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
-const ComponentBox = ({ number, innerText, outerText, innerTextColor, outerTextColor, numberColor, circleColor, circlePosition, innerTextPosition, outerTextPosition }) => {
+const ComponentBox = ({ number, innerText, outerText, innerTextColor, outerTextColor, numberColor, circleColor }) => {
   const circleStyle = {
-    width: '100px',
-    height: '100px',
+    width: '150px',
+    height: '150px',
     borderRadius: '50%',
     backgroundColor: circleColor,
     display: 'flex',
@@ -19,8 +19,8 @@ const ComponentBox = ({ number, innerText, outerText, innerTextColor, outerTextC
     fontSize: '16px',
     textAlign: 'center',
     position: 'absolute',
-    top: circlePosition.y,
-    left: circlePosition.x,
+    top: '50%',
+    left: '50%',
     transform: 'translate(-50%, -50%)',
   };
 
@@ -28,34 +28,30 @@ const ComponentBox = ({ number, innerText, outerText, innerTextColor, outerTextC
     color: numberColor,
     fontSize: '30px',
     fontWeight: 'bold',
+    marginBottom: '5px',
   };
 
   const innerTextStyle = {
     color: innerTextColor,
     fontSize: '16px',
-    textAlign: 'left',
-    position: 'absolute',
-    top: innerTextPosition.y,
-    left: innerTextPosition.x,
   };
 
   const outerTextStyle = {
     color: outerTextColor,
     fontSize: '16px',
-    textAlign: 'center',
     position: 'absolute',
-    top: outerTextPosition.y,
-    left: outerTextPosition.x,
+    top: '5px',
+    left: '5px',
   };
 
   return (
-    <div>
-      <div style={circleStyle}>
-        <div style={numberStyle}>{number}</div>
-        <div style={innerTextStyle}>{innerText}</div>
-      </div>
-      <div style={outerTextStyle}>{outerText}</div>
-    </div>
+    <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+      <Box sx={circleStyle}>
+        <Typography sx={numberStyle} variant="h3">{number}</Typography>
+        <Typography sx={innerTextStyle} variant="body1">{innerText}</Typography>
+      </Box>
+      <Typography sx={outerTextStyle} variant="body1">{outerText}</Typography>
+    </Box>
   );
 };
 
@@ -67,18 +63,25 @@ ComponentBox.propTypes = {
   outerTextColor: PropTypes.string.isRequired,
   numberColor: PropTypes.string.isRequired,
   circleColor: PropTypes.string.isRequired,
-  circlePosition: PropTypes.shape({
-    x: PropTypes.string.isRequired,
-    y: PropTypes.string.isRequired,
-  }).isRequired,
-  innerTextPosition: PropTypes.shape({
-    x: PropTypes.string.isRequired,
-    y: PropTypes.string.isRequired,
-  }).isRequired,
-  outerTextPosition: PropTypes.shape({
-    x: PropTypes.string.isRequired,
-    y: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default ComponentBox;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
