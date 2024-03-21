@@ -1,42 +1,40 @@
 
 // eslint-disable-next-line no-unused-vars
+
 import React from "react";
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Header from "../components/Header";
 import GraphComponent from "../components/GraphComponent";
-import ComponentBox from "../components/ComponentBox/ComponentBox"; // Importa el componente ComponentBox
+import Header from "../components/Header";
+import ComponentBox from "../components/ComponentBox/ComponentBox"; 
 
-function DashboardPage() {
+function NuevoDashboardPage() {
   return (
     <>
       <Box component="section" width={"100vw"} height={"100vh"} bgcolor={"#0053B1"}>
         <Header height={"150px"} />
 
-        <Box margin={"50px"}>
-          <Grid container spacing={2}>
-            {/* Top row of graphs */}
-            <Grid item xs={4}>
-              <GraphComponent>
-                  <ComponentBox
-                    number={90} // Número para el centro del círculo
-                    innerText="Texto dentro del círculo" // Texto dentro del círculo
-                    outerText="Texto fuera del círculo" // Texto fuera del círculo
-                    innerTextColor="#FFFFFF" // Color del texto dentro del círculo
-                    outerTextColor="#FFFFFF" // Color del texto fuera del círculo
-                    numberColor="#FFFF00" // Color del número
-                    circleColor="#3C1053" // Color del círculo
-                  />
-              </GraphComponent>
-            </Grid>
-          </Grid>
-        </Box>
+        {/* Bloque con color proporcionado por GraphComponent */}
+        <GraphComponent>
+          <Box margin={"50px"} position="relative">
+            {/* ComponentBox con las nuevas especificaciones */}
+            <ComponentBox
+              number={90} 
+              numberColor="#1D1934" 
+            />
+            {/* Textos en cada esquina */}
+            <div style={{ position: 'absolute', top: -50, left: -50, color: '#FFFFFF' }}>Top Left Text</div>
+            <div style={{ position: 'absolute', top: -50, right: -50, color: '#FFFFFF' }}>Top Right Text</div>
+            <div style={{ position: 'absolute', bottom: -90, left: -50, color: '#FFFFFF' }}>Bottom Left Text</div>
+            <div style={{ position: 'absolute', bottom: -90, right: -50, color: '#FFFFFF' }}>Bottom Right Text</div>
+          </Box>
+        </GraphComponent>
       </Box>
     </>
   );
 }
 
-export default DashboardPage;
+export default NuevoDashboardPage;
+
 
 
 
