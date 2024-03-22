@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid} from 'recharts';
 import "./GraphLine.css";
@@ -6,11 +7,10 @@ const GraphLine = ({ data }) => {
 
   return (
     <div className="graph-line">
-      {/* Líneas X e Y */}
+      
       <div className="x-axis" />
       <div className="y-axis" />
 
-      {/* Gráfico */}
       <LineChart width={500} height={290} data={data}>
         <CartesianGrid />
         <XAxis dataKey="x" />
