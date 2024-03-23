@@ -1,9 +1,9 @@
 import { RouterProvider } from "react-router-dom";
-import AppRouter from "./ui/pages/router.jsx"; // The path to your AppRouter file
+import AppRouter from "./ui/pages/router.jsx";
 
 function App() {
   return (
-    <RouterProvider router={AppRouter} />
+      <RouterProvider router={AppRouter} />
   );
 }
 

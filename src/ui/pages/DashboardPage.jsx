@@ -11,6 +11,9 @@ import GraphComponent from "../components/GraphComponent";
 import ComponentBox from "../components/ComponentBox/ComponentBox";
 import GraphLine from "../components/ComponentBox/GraphLine";
 import Text from '@mui/material/Typography';
+import FilterComponent from "../components/FilterComponent";
+import SearchhComponent from "../components/searchComponent";
+import LeaderboardComponent from "../components/LeaderboardComponent";
 
 function Dashboard() {
   const data = [
@@ -72,20 +75,20 @@ function Dashboard() {
             
             <Grid item xs={4}>
               <GraphComponent>
-                
+                <FilterComponent />
               </GraphComponent>
             </Grid>
 
             
             <Grid item xs={4}>
               <GraphComponent>
-                
+                <SearchhComponent />
               </GraphComponent>
             </Grid>
 
             <Grid item xs={4}>
               <GraphComponent>
-                
+                <LeaderboardComponent />
               </GraphComponent>
             </Grid>
           </Grid>
