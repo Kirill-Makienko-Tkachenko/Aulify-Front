@@ -28,67 +28,68 @@ function Dashboard() {
     <>
       <Box component="section" width={"100vw"} height={"100vh"} bgcolor={"#0053B1"}>
         <Header height={"150px"} />
-
-        <Grid container spacing={2}>
-          {/* Primer cuadro */}
-          <Grid item xs={4}>
-            <GraphComponent>
-              <Box margin={"50px"} position="relative">
-                <ComponentBox
-                  number={90} 
-                  numberColor="#1D1934" 
-                />
-                <div style={{ position: 'absolute', top: -50, left: -50, color: '#FFFFFF' }}>Top Left Text</div>
-                <div style={{ position: 'absolute', top: -50, right: -50, color: '#FFFFFF' }}>Top Right Text</div>
-                <div style={{ position: 'absolute', bottom: -90, left: -50, color: '#FFFFFF' }}>Bottom Left Text</div>
-                <div style={{ position: 'absolute', bottom: -90, right: -50, color: '#FFFFFF' }}>Bottom Right Text</div>
-              </Box>
-            </GraphComponent>
-          </Grid>
-
-         
-          <Grid item xs={4}>
-            <GraphComponent>
-              <Box margin={"50px"} position="relative">
-                <ComponentBox
-                  number={90} 
-                  numberColor="#1D1934" 
-                />
-                <div style={{ position: 'absolute', top: -50, left: -50, color: '#FFFFFF' }}>Top Left Text</div>
-                <div style={{ position: 'absolute', top: -50, right: -50, color: '#FFFFFF' }}>Top Right Text</div>
-                <div style={{ position: 'absolute', bottom: -90, left: -50, color: '#FFFFFF' }}>Bottom Left Text</div>
-                <div style={{ position: 'absolute', bottom: -90, right: -50, color: '#FFFFFF' }}>Bottom Right Text</div>
-              </Box>
-            </GraphComponent>
-          </Grid>
+        <Box margin={"50px"}>
+          <Grid container spacing={2}>
+            {/* Primer cuadro */}
+            <Grid item xs={4}>
+              <GraphComponent>
+                <Box margin={"50px"} position="relative">
+                  <ComponentBox
+                    number={90} 
+                    numberColor="#1D1934" 
+                  />
+                  <div style={{ position: 'absolute', top: -50, left: -50, color: '#FFFFFF' }}>Top Left Text</div>
+                  <div style={{ position: 'absolute', top: -50, right: -50, color: '#FFFFFF' }}>Top Right Text</div>
+                  <div style={{ position: 'absolute', bottom: -90, left: -50, color: '#FFFFFF' }}>Bottom Left Text</div>
+                  <div style={{ position: 'absolute', bottom: -90, right: -50, color: '#FFFFFF' }}>Bottom Right Text</div>
+                </Box>
+              </GraphComponent>
+            </Grid>
 
           
-          <Grid item xs={4}>
-            <GraphComponent>
-            <GraphLine data={data} />
-            </GraphComponent>
-          </Grid>
+            <Grid item xs={4}>
+              <GraphComponent>
+                <Box margin={"50px"} position="relative">
+                  <ComponentBox
+                    number={90} 
+                    numberColor="#1D1934" 
+                  />
+                  <div style={{ position: 'absolute', top: -50, left: -50, color: '#FFFFFF' }}>Top Left Text</div>
+                  <div style={{ position: 'absolute', top: -50, right: -50, color: '#FFFFFF' }}>Top Right Text</div>
+                  <div style={{ position: 'absolute', bottom: -90, left: -50, color: '#FFFFFF' }}>Bottom Left Text</div>
+                  <div style={{ position: 'absolute', bottom: -90, right: -50, color: '#FFFFFF' }}>Bottom Right Text</div>
+                </Box>
+              </GraphComponent>
+            </Grid>
 
-          
-          <Grid item xs={4}>
-            <GraphComponent>
-              
-            </GraphComponent>
-          </Grid>
+            
+            <Grid item xs={4}>
+              <GraphComponent>
+              <GraphLine data={data} />
+              </GraphComponent>
+            </Grid>
 
-          
-          <Grid item xs={4}>
-            <GraphComponent>
-              
-            </GraphComponent>
-          </Grid>
+            
+            <Grid item xs={4}>
+              <GraphComponent>
+                
+              </GraphComponent>
+            </Grid>
 
-          <Grid item xs={4}>
-            <GraphComponent>
-              
-            </GraphComponent>
+            
+            <Grid item xs={4}>
+              <GraphComponent>
+                
+              </GraphComponent>
+            </Grid>
+
+            <Grid item xs={4}>
+              <GraphComponent>
+                
+              </GraphComponent>
+            </Grid>
           </Grid>
-        </Grid>
+        </Box>
       </Box>
     </>
   );
