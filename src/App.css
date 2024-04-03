@@ -1,0 +1,14 @@
+/* index.css or App.css */
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* This will prevent horizontal scroll if it's caused by overflow */
+  }
+  
+  /* This is a basic reset for common elements, you might need to expand it based on your needs */
+  *, *::before, *::after {
+    box-sizing: border-box; /* Ensures that padding and border are included in the total width and height */
+  }
+  

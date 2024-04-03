@@ -9,7 +9,7 @@ const GraphComponent = ({ children }) => {
     return (
         <div
             style={{
-                width: 550,
+                width: 520,
                 height: 300,
                 backgroundColor: '#1D1934',
                 padding: 20,

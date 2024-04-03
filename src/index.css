@@ -3,7 +3,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -11,10 +11,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+
+/* index.css or App.css */
+html, body, #root {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* This will prevent horizontal scroll if it's caused by overflow */
 }
-
-

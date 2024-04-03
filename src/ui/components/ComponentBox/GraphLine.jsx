@@ -1,17 +1,32 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid} from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { Button } from '@mui/material'; // Import Button from Material-UI
 import "./GraphLine.css";
 
 const GraphLine = ({ data }) => {
 
   return (
-    <div className="graph-line">
+    <>
+
+    <div className="buttons-container">
+        <Button variant="contained" color="primary">
+          Button 1
+        </Button>
+        <Button variant="contained" color="secondary">
+          Button 2
+        </Button>
+      </div>
       
+    <div className="graph-line" >
+      {/* Buttons container */}
+      
+      
+      {/* ... rest of your component */}
       <div className="x-axis" />
       <div className="y-axis" />
 
-      <LineChart width={500} height={290} data={data}>
+      <LineChart width={500} height={220} data={data}>
         <CartesianGrid />
         <XAxis dataKey="x" />
         <YAxis yAxisId="left-axis" />
@@ -20,8 +35,8 @@ const GraphLine = ({ data }) => {
         <Line yAxisId="right-axis" type="monotone" dataKey="z" stroke="red" />
       </LineChart>
     </div>
+    </>
   );
 }
 
 export default GraphLine;
-
