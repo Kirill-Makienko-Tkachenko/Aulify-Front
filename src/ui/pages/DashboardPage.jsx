@@ -47,6 +47,11 @@ function Dashboard() {
                     BottomLeftURL="Bottom Left Text"
                     BottomRightURL="Bottom Right Text"
                   />
+                   {/*  [ ] Jugadores en linea
+                        [ ] Retencion en juegos
+                        [ ] Promedio niveles completados
+                        [ ] Quejas recibidas
+                        [ ] Puntaje del medio */}
                 </Box>
               </GraphComponent>
             </Grid>
@@ -60,6 +65,11 @@ function Dashboard() {
                     BottomLeftURL="Bottom Left Text 2"
                     BottomRightURL="Bottom Right Text 2"
                   />
+                  {/*   [ ] Alumnos registrados
+                        [ ] Edad promedio
+                        [ ] Calificacion buena
+                        [ ] Calificacion mala
+                        [ ] Puntaje del medio */}
                 </Box>
               </GraphComponent>
             </Grid>
