@@ -47,11 +47,11 @@ function Dashboard() {
                     BottomLeftURL="Bottom Left Text"
                     BottomRightURL="Bottom Right Text"
                   />
-                   {/*  [ ] Jugadores en linea
-                        [ ] Retencion en juegos
-                        [ ] Promedio niveles completados
-                        [ ] Quejas recibidas
-                        [ ] Puntaje del medio */}
+                   {/*  [x,x] Jugadores en linea - alumno y todos los jugadores
+                        [x,x] Retencion en juegos - alumnos y todos los jugadores
+                        [x] Promedio niveles completados - alumnos y todos los jugadores
+                        [x] Quejas recibidas
+                        */}
                 </Box>
               </GraphComponent>
             </Grid>
@@ -65,11 +65,11 @@ function Dashboard() {
                     BottomLeftURL="Bottom Left Text 2"
                     BottomRightURL="Bottom Right Text 2"
                   />
-                  {/*   [ ] Alumnos registrados
-                        [ ] Edad promedio
-                        [ ] Calificacion buena
-                        [ ] Calificacion mala
-                        [ ] Puntaje del medio */}
+                  {/*   [x] Alumnos registrados
+                        [x] Edad promedio
+                        [x] Calificacion buena 4 o mas
+                        [x] Calificacion mala 3 o menos
+                        [x] Puntaje del medio */}
                 </Box>
               </GraphComponent>
             </Grid>
