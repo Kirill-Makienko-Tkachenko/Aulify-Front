@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -13,17 +13,30 @@ import SearchhComponent from "../components/searchComponent";
 import LeaderboardComponent from "../components/LeaderboardComponent";
 
 function Dashboard() {
-  const data = [
-    { x: 1, y: 23, z: 122 },
-    { x: 2, y: 3, z: 73 },
-    { x: 3, y: 15, z: 32 },
-    { x: 4, y: 35, z: 23 },
-    { x: 5, y: 45, z: 20 },
-    { x: 6, y: 25, z: 29 },
-    { x: 7, y: 17, z: 61 },
-    { x: 8, y: 32, z: 45 },
-    { x: 9, y: 43, z: 93 },
-  ];
+
+  //const ENDPOINTURL = "http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com"
+  const ENDPOINTURL = "http://localhost:3000"
+
+  const [graphData, setGraphData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(ENDPOINTURL + "/jugadores/jugadores/playersForGraph2");
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setGraphData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  
   return (
     <>
       <Box
@@ -42,10 +55,10 @@ function Dashboard() {
               <GraphComponent>
                 <Box position="relative">
                   <ComponentBox
-                    TopLeftURL="Top Left Text"
-                    TopRightURL="Top Right Text"
-                    BottomLeftURL="Bottom Left Text"
-                    BottomRightURL="Bottom Right Text"
+                    TopLeftURL= {ENDPOINTURL + "/jugador/jugadores/onlineAulify"}
+                    TopRightURL={ENDPOINTURL + "/levels/:levelId/game-completion"}
+                    BottomLeftURL={ENDPOINTURL + "/levels/:levelId/game-retention"}
+                    BottomRightURL={ENDPOINTURL + "/quejas"}
                   />
                    {/*  [x,x] Jugadores en linea - alumno y todos los jugadores
                         [x,x] Retencion en juegos - alumnos y todos los jugadores
@@ -59,12 +72,12 @@ function Dashboard() {
             <Grid item xs={4}>
               <GraphComponent>
                 <Box position="relative">
-                <ComponentBox
-                    TopLeftURL="Top Left Text 2"
-                    TopRightURL="Top Right Text 2"
-                    BottomLeftURL="Bottom Left Text 2"
-                    BottomRightURL="Bottom Right Text 2"
-                  />
+                {/*<ComponentBox
+                    TopLeftURL= {ENDPOINTURL + "/jugador/jugadores"}
+                    TopRightURL={ENDPOINTURL + "/jugador/jugadores/averageAge"}
+                    BottomLeftURL={ENDPOINTURL + "/quejas/quejas"}
+                    BottomRightURL={ENDPOINTURL + "/quejas/quejas/badQuejas"}
+                      />*/}
                   {/*   [x] Alumnos registrados
                         [x] Edad promedio
                         [x] Calificacion buena 4 o mas
@@ -76,7 +89,7 @@ function Dashboard() {
 
             <Grid item xs={4}>
               <GraphComponent>
-                <GraphLine data={data} />
+                <GraphLine data={graphData} />
               </GraphComponent>
             </Grid>
 

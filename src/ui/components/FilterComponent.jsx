@@ -46,39 +46,7 @@ const FilterComponent = ({ children }) => {
         alignItems={"center"}
       >
 
-    <Box>
-          <Button
-            variant="contained"
-            color="amarillo"
-            size="large"
-            sx={{ height: "70px" }}
-          >
-            Python 1
-          </Button> {/*Button component from MUI*/}
-        </Box>
-        <Box marginLeft={5} marginRight={5}>
-          <Button
-            variant="contained"
-            color="amarillo"
-            size="large"
-            sx={{ height: "70px" }}
-          >
-            Python 2
-          </Button>{" "}
-          {/*Button component from MUI*/}
-        </Box>
-
-        <Box>
-          <Button
-            variant="contained"
-            color="amarillo"
-            size="large"
-            sx={{ height: "70px" }}
-          >
-            Python 3
-          </Button>{" "}
-          {/*Button component from MUI*/}
-        </Box>
+    
 
 
       </Box>
