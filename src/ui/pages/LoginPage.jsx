@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef } from 'react';
 import { Box, Button, TextField, Typography, Grid, Paper } from '@mui/material';
 import Header from '../components/Header';
@@ -7,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 function LoginPage() {
     const loginForm = useRef(null)
     const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false); // State to handle error visibility
   const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
@@ -31,7 +33,7 @@ function LoginPage() {
       if (data.token) {
         // Successful login
         localStorage.setItem("token", data.token); // Storing the token in localStorage
-        navigate("/dashboard"); // Navigating to the dashboard route
+        navigate("/dashboardAlumnosPythonI"); // Navigating to the dashboard route
       } else {
         alert("Usuario o contraseña incorrectos"); // Displaying error message
       }

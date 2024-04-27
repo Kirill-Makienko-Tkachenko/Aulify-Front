@@ -3,16 +3,16 @@ import React, { useState, useEffect } from "react";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Header from "../components/Header";
-import GraphComponent from "../components/GraphComponent";
-import ComponentBox from "../components/ComponentBox/ComponentBox";
-import GraphLine from "../components/ComponentBox/GraphLine";
+import Header from "../../components/Header";
+import GraphComponent from "../../components/GraphComponent";
+import ComponentBox from "../../components/ComponentBox/ComponentBox";
+import GraphLine from "../../components/ComponentBox/GraphLine";
 import Text from "@mui/material/Typography";
-import FilterComponent from "../components/FilterComponent";
-import SearchhComponent from "../components/searchComponent";
-import LeaderboardComponent from "../components/LeaderboardComponent";
+import FilterComponent from "../../components/FilterComponent";
+import SearchhComponent from "../../components/searchComponent";
+import LeaderboardComponent from "../../components/LeaderboardComponent";
 
-function Dashboard() {
+function DashboardAlumnoPythonIII() {
 
   //const ENDPOINTURL = "http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com"
   const ENDPOINTURL = "http://localhost:3000"
@@ -54,12 +54,12 @@ function Dashboard() {
             <Grid item xs={4}>
               <GraphComponent>
                 <Box position="relative">
-                  <ComponentBox
+                  {/*<ComponentBox
                     TopLeftURL= {ENDPOINTURL + "/jugador/jugadores/onlineAulify"}
-                    TopRightURL={ENDPOINTURL + "/levels/:levelId/game-completion"}
-                    BottomLeftURL={ENDPOINTURL + "/levels/:levelId/game-retention"}
-                    BottomRightURL={ENDPOINTURL + "/quejas"}
-                  />
+                    TopRightURL={ENDPOINTURL + "/levels/3/aulify-game-completion"}
+                    BottomLeftURL={ENDPOINTURL + "/levels/3/aulify-game-retention"}
+                    BottomRightURL={ENDPOINTURL + "/quejas/badQuejas"}
+      />*/}
                    {/*  [x,x] Jugadores en linea - alumno y todos los jugadores
                         [x,x] Retencion en juegos - alumnos y todos los jugadores
                         [x] Promedio niveles completados - alumnos y todos los jugadores
@@ -117,6 +117,6 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DashboardAlumnoPythonIII;
 
 //

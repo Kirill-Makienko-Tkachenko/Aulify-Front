@@ -1,5 +1,6 @@
 import { Navigate } from 'react-router-dom' // 
 
+// eslint-disable-next-line react/prop-types
 const ProtectedRoute = ({children}) => {
     const token = localStorage.getItem('token')
     if(!token){
@@ -12,3 +13,4 @@ const ProtectedRoute = ({children}) => {
 // Esto hace que el contenido de la ruta protegida sea renderizado solo si el usuario tiene un token en localStorage, es decir, si el usuario ha iniciado sesión. Si no tiene un token, el usuario es redirigido a la ruta de inicio de sesión.
 
 export default ProtectedRoute
+

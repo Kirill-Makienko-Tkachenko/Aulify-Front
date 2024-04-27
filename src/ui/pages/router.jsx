@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import { Navigate } from 'react-router-dom'; // Import Navigate for redirection
-import DashboardAlumno from "./DashboardPageAlumno.jsx";
+import DashboardAlumnoPythonI from "./DashboardPageAlumnoPythonI.jsx";
 import LoginPage from "./LoginPage";
 import Layout from "./Layout.jsx"; // Import the Layout component
 import ProtectedRoute from "./ProtectedRoute"; // Import the ProtectedRoute component
+
 
 function DummyPage() { 
   return (
@@ -28,8 +30,8 @@ const AppRouter = createBrowserRouter([
         element: <LoginPage />,
       },
       {
-        path: "dashboard",
-        element: <ProtectedRoute><DashboardAlumno /></ProtectedRoute>, // Wrap the Dashboard with ProtectedRoute
+        path: "dashboardAlumnosPythonI",
+        element: <ProtectedRoute><DashboardAlumnoPythonI /></ProtectedRoute>, // Wrap the Dashboard with ProtectedRoute
       },
       {
         path: "help",
