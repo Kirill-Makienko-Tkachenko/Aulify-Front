@@ -11,6 +11,8 @@ import GraphLine from "../components/ComponentBox/GraphLine";
 import FilterComponent from "../components/FilterComponent";
 import SearchhComponent from "../components/searchComponent";
 import LeaderboardComponent from "../components/LeaderboardComponent";
+import LoadingComponent1 from "../components/LoadingComponent/LoadingComponent1";
+import LoadingComponent2 from "../components/LoadingComponent/LoadingComponent2";
 
 function DashboardAlumnoPythonI() {
 
@@ -19,10 +21,16 @@ function DashboardAlumnoPythonI() {
 
   const [graphData, setGraphData] = useState([]);
 
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
     const fetchData = async () => {
+      
       try {
-        const response = await fetch(ENDPOINTURL + "/jugador/jugadores/playersForGraph");
+        const headers = {
+          authorization: `Bearer ${token}`,
+        };
+        const response = await fetch(ENDPOINTURL + "/jugador/jugadores/playersForGraph", {headers});
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -35,7 +43,7 @@ function DashboardAlumnoPythonI() {
 
     fetchData();
   }, []);
-
+  console.log(graphData);
   
   return (
     <>
@@ -54,12 +62,11 @@ function DashboardAlumnoPythonI() {
             <Grid item xs={4}>
               <GraphComponent>
                 <Box position="relative">
-                  {<ComponentBox
-                    TopLeftURL= {ENDPOINTURL + "/jugador/jugadores/onlineAulify"}
-                    TopRightURL={ENDPOINTURL + "/level/levels/1/aulify-game-completion"}
-                    BottomLeftURL={ENDPOINTURL + "/level/levels/1/aulify-game-retention"}
-                    BottomRightURL={ENDPOINTURL + "/quejas/quejas/badQuejas"}
-                      />}
+                  <LoadingComponent1  
+                  TopLeftURL= {ENDPOINTURL + "/jugador/jugadores/onlineAulify"}
+                  TopRightURL={ENDPOINTURL + "/level/levels/1/aulify-game-completion"}
+                  BottomLeftURL={ENDPOINTURL + "/level/levels/1/aulify-game-retention"}
+                  BottomRightURL={ENDPOINTURL + "/quejas/quejas"}/>
                    {/*  [x,x] Jugadores en linea - alumno y todos los jugadores
                         [x,x] Retencion en juegos - alumnos y todos los jugadores
                         [x] Promedio niveles completados - alumnos y todos los jugadores
@@ -72,6 +79,12 @@ function DashboardAlumnoPythonI() {
             <Grid item xs={4}>
               <GraphComponent>
                 <Box position="relative">
+                        <LoadingComponent2 
+                        TopLeftURL= {ENDPOINTURL + "/jugador/jugadores"}
+                        TopRightURL={ENDPOINTURL + "/jugador/jugadores/averageAge"}
+                        BottomLeftURL={ENDPOINTURL + "/quejas/quejas"}
+                        BottomRightURL={ENDPOINTURL + "/quejas/quejas/badQuejas"}
+                      />
                 {/*<ComponentBox
                     TopLeftURL= {ENDPOINTURL + "/jugador/jugadores"}
                     TopRightURL={ENDPOINTURL + "/jugador/jugadores/averageAge"}

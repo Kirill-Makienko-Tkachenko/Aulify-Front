@@ -11,7 +11,7 @@ const GraphComponent = ({ children }) => {
             style={{
                 width: 520,
                 height: 300,
-                backgroundColor: '#1D1934',
+                backgroundColor: 'rgba(33, 28, 58, 0.8)',
                 padding: 20,
                 borderRadius: 10,
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',

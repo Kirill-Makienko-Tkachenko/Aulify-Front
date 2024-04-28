@@ -5,6 +5,11 @@ import DashboardAlumnoPythonI from "./DashboardPageAlumnoPythonI.jsx";
 import LoginPage from "./LoginPage";
 import Layout from "./Layout.jsx"; // Import the Layout component
 import ProtectedRoute from "./ProtectedRoute"; // Import the ProtectedRoute component
+import DashboardAlumnoPythonII from "./DashboardPageAlumnoPythonII.jsx";
+import DashboardAlumnoPythonIII from "./DashboardPageAlumnoPythonIII.jsx";
+import DashboardNoAlumnoPythonI from "./DashboardPageNoAlumnoPythonI.jsx";
+import DashboardNoAlumnoPythonII from "./DashboardPageNoAlumnoPythonII.jsx";
+import DashboardNoAlumnoPythonIII from "./DashboardPageNoAlumnoPythonIII.jsx";
 
 
 function DummyPage() { 
@@ -31,11 +36,31 @@ const AppRouter = createBrowserRouter([
       },
       {
         path: "dashboardAlumnosPythonI",
-        element: <ProtectedRoute><DashboardAlumnoPythonI /></ProtectedRoute>, // Wrap the Dashboard with ProtectedRoute
+        element: <ProtectedRoute><DashboardAlumnoPythonI /></ProtectedRoute>,
+      },
+      {
+        path: "dashboardAlumnosPythonII",
+        element: <ProtectedRoute><DashboardAlumnoPythonII  /></ProtectedRoute>,
+      },
+      {
+        path: "dashboardAlumnosPythonIII",
+        element: <ProtectedRoute><DashboardAlumnoPythonIII /></ProtectedRoute>,
+      },
+      {
+        path: "dashboardNoAlumnosPythonI",
+        element: <ProtectedRoute><DashboardNoAlumnoPythonI /></ProtectedRoute>,
+      },
+      {
+        path: "dashboardNoAlumnosPythonII",
+        element: <ProtectedRoute><DashboardNoAlumnoPythonII /></ProtectedRoute>,
+      },
+      {
+        path: "dashboardNoAlumnosPythonIII",
+        element: <ProtectedRoute><DashboardNoAlumnoPythonIII /></ProtectedRoute>,
       },
       {
         path: "help",
-        element: <ProtectedRoute><DummyPage /></ProtectedRoute>, // Wrap the DummyPage with ProtectedRoute
+        element: <ProtectedRoute><DummyPage /></ProtectedRoute>,
       },
     ],
   },

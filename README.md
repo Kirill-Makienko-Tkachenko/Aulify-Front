@@ -13,3 +13,9 @@ Currently, two official plugins are available:
 
 to install 
 npm install
+
+TODO
+[ ] BadQuejas no da resultado
+[ ] Edad promedio no da resultado
+[ ] GraphData no da resultado
+[ ] Por alguna razon, los endpoints nuevos no dan su informacion

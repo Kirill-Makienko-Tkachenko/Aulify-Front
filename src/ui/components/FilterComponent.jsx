@@ -1,16 +1,25 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
 import PropTypes from "prop-types";
-import Text from "@mui/material/Typography";
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/material";
-// eslint-disable-next-line no-unused-vars
+import { useNavigate, useLocation } from 'react-router-dom';
+
 const FilterComponent = ({ children }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Función para manejar la navegación basada en el nivel de Python y si es para alumnos o no alumnos
+  const handleNavigate = (level) => {
+    const baseRoute = location.pathname.includes('Alumnos') ? 'dashboardAlumnosPython' : 'dashboardNoAlumnosPython';
+    navigate(`/${baseRoute}${level}`);
+  };
+
   return (
     <div>
-      <Text align="center" variant="h5" fontSize={60}>
+      <Typography align="center" variant="h5" fontSize={60}>
         Filtrar por:
-      </Text>
+      </Typography>
       <Box
         sx={{ display: "flex" }}
         marginBlockStart={3}
@@ -23,9 +32,10 @@ const FilterComponent = ({ children }) => {
             color="verde"
             size="large"
             sx={{ height: "70px" }}
+            onClick={() => navigate('/dashboardAlumnosPythonI')}
           >
             Alumnos de Aulify
-          </Button> {/*Button component from MUI*/}
+          </Button>
         </Box>
         <Box marginLeft={5}>
           <Button
@@ -33,10 +43,10 @@ const FilterComponent = ({ children }) => {
             color="rojo"
             size="large"
             sx={{ height: "70px" }}
+            onClick={() => navigate('/dashboardNoAlumnosPythonI')}
           >
             Todos los jugadores
-          </Button>{" "}
-          {/*Button component from MUI*/}
+          </Button>
         </Box>
       </Box>
       <Box
@@ -45,10 +55,39 @@ const FilterComponent = ({ children }) => {
         justifyContent={"center"}
         alignItems={"center"}
       >
-
-    
-
-
+        <Box>
+          <Button
+            variant="contained"
+            color="amarillo"
+            size="large"
+            sx={{ height: "70px" }}
+            onClick={() => handleNavigate('I')}
+          >
+            Python 1
+          </Button>
+        </Box>
+        <Box marginLeft={5} marginRight={5}>
+          <Button
+            variant="contained"
+            color="amarillo"
+            size="large"
+            sx={{ height: "70px" }}
+            onClick={() => handleNavigate('II')}
+          >
+            Python 2
+          </Button>
+        </Box>
+        <Box>
+          <Button
+            variant="contained"
+            color="amarillo"
+            size="large"
+            sx={{ height: "70px" }}
+            onClick={() => handleNavigate('III')}
+          >
+            Python 3
+          </Button>
+        </Box>
       </Box>
     </div>
   );

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 
-const ComponentBox = ({
+const LoadingComponent2 = ({
   TopLeftURL,
   TopRightURL,
   BottomLeftURL,
@@ -99,7 +99,7 @@ const ComponentBox = ({
         >
           <Box sx={{ width: "50%", height: "50%", display: "flex" }}>
             <div>
-              <h3 style={{...h3Style, marginTop: 30}}>Jugadores en linea</h3 >
+              <h3 style={{...h3Style, marginTop: 30}}>Alumnos resigtrados</h3 >
               <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}>{topLeftData.length}</h1>
             </div>
           </Box>
@@ -111,14 +111,15 @@ const ComponentBox = ({
               justifyContent: "end",
             }}
           >
-            {topRightData ? (
+            {topRightData & topRightData.length < 0 ? (
               <div>
-                <h3 style={{ ...h3Style, textAlign: "center", marginLeft: 50 }}>Niveles promedio completados {topRightData[0].name}</h3>
+                <h3 style={{ ...h3Style, textAlign: "center", marginLeft: 50 }}>Edad promedio  </h3>
                 
-                <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}>{parseInt(topRightData[0].average_levels_completed)}</h1>
+                
+                <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}></h1>
               </div>
             ) : (
-              <div>No data available</div>
+              <div>No data available: Edad promedio</div>
             )}
           </Box>
 
@@ -130,12 +131,12 @@ const ComponentBox = ({
               alignItems: "end",
             }}
           >
-            {bottomLeftData && bottomLeftData.average_time_seconds ? (
+            {bottomLeftData && bottomLeftData.length > 0 ? (
               <div>
-                <h1 style={{fontSize: "35px", textAlign: "left", color: "#04B100", marginRight: 50}}>
-                  {Math.round(bottomLeftData.average_time_seconds / 60)} Minutos
+                <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight:71}}>
+                  {bottomLeftData.length}
                 </h1>
-                <h3 style={h3Style}>Retención en juegos</h3>
+                <h3 style={h3Style}>Reviews recibidas: </h3>
               </div>
             ) : (
               <div>No data available</div>
@@ -160,12 +161,12 @@ const ComponentBox = ({
                 <h3 style={{ ...h3Style, textAlign: "right", marginLeft: 50}}>Quejas recibidas</h3>
               </div>
             ) : (
-              <div>No data available</div>
+              <div>No data available: badQuejas</div>
             )}
           </Box>
           <Box sx={circleStyle}>
           <p style={{ fontSize: "20px" }}>Puntaje actual: </p>
-            {topLeftData.length + parseInt(topRightData[0].average_levels_completed) + bottomRightData.filter(item => item.Calificacion > 3).length + Math.round(bottomLeftData.average_time_seconds / 60)}
+            {}
             </Box>
         </Box>
       )}
@@ -173,11 +174,11 @@ const ComponentBox = ({
   );
 };
 
-ComponentBox.propTypes = {
+LoadingComponent2.propTypes = {
   TopLeftURL: PropTypes.string,
   TopRightURL: PropTypes.string,
   BottomLeftURL: PropTypes.string,
   BottomRightURL: PropTypes.string,
 };
 
-export default ComponentBox;
+export default LoadingComponent2;

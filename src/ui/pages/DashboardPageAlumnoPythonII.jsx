@@ -3,14 +3,16 @@ import React, { useState, useEffect } from "react";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Header from "../../components/Header";
-import GraphComponent from "../../components/GraphComponent";
-import ComponentBox from "../../components/ComponentBox/ComponentBox";
-import GraphLine from "../../components/ComponentBox/GraphLine";
-import Text from "@mui/material/Typography";
-import FilterComponent from "../../components/FilterComponent";
-import SearchhComponent from "../../components/searchComponent";
-import LeaderboardComponent from "../../components/LeaderboardComponent";
+import Header from "../components/Header";
+import GraphComponent from "../components/GraphComponent";
+import ComponentBox from "../components/ComponentBox/ComponentBox";
+import GraphLine from "../components/ComponentBox/GraphLine";
+
+import FilterComponent from "../components/FilterComponent";
+import SearchhComponent from "../components/searchComponent";
+import LeaderboardComponent from "../components/LeaderboardComponent";
+import LoadingComponent1 from "../components/LoadingComponent/LoadingComponent1";
+import LoadingComponent2 from "../components/LoadingComponent/LoadingComponent2";
 
 function DashboardAlumnoPythonII() {
 
@@ -19,10 +21,16 @@ function DashboardAlumnoPythonII() {
 
   const [graphData, setGraphData] = useState([]);
 
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
     const fetchData = async () => {
+      
       try {
-        const response = await fetch(ENDPOINTURL + "/jugadores/jugadores/playersForGraph2");
+        const headers = {
+          authorization: `Bearer ${token}`,
+        };
+        const response = await fetch(ENDPOINTURL + "/jugador/jugadores/playersForGraph", {headers});
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -35,7 +43,6 @@ function DashboardAlumnoPythonII() {
 
     fetchData();
   }, []);
-
   
   return (
     <>
@@ -54,12 +61,11 @@ function DashboardAlumnoPythonII() {
             <Grid item xs={4}>
               <GraphComponent>
                 <Box position="relative">
-                  {/*<ComponentBox
-                    TopLeftURL= {ENDPOINTURL + "/jugador/jugadores/onlineAulify"}
-                    TopRightURL={ENDPOINTURL + "/levels/2/aulify-game-completion"}
-                    BottomLeftURL={ENDPOINTURL + "/levels/2/aulify-game-retention"}
-                    BottomRightURL={ENDPOINTURL + "/quejas/badQuejas"}
-      />*/}
+                  <LoadingComponent1  
+                  TopLeftURL= {ENDPOINTURL + "/jugador/jugadores/onlineAulify"}
+                  TopRightURL={ENDPOINTURL + "/level/levels/2/aulify-game-completion"}
+                  BottomLeftURL={ENDPOINTURL + "/level/levels/2/aulify-game-retention"}
+                  BottomRightURL={ENDPOINTURL + "/quejas/quejas"}/>
                    {/*  [x,x] Jugadores en linea - alumno y todos los jugadores
                         [x,x] Retencion en juegos - alumnos y todos los jugadores
                         [x] Promedio niveles completados - alumnos y todos los jugadores
@@ -72,6 +78,12 @@ function DashboardAlumnoPythonII() {
             <Grid item xs={4}>
               <GraphComponent>
                 <Box position="relative">
+                        <LoadingComponent2 
+                        TopLeftURL= {ENDPOINTURL + "/jugador/jugadores"}
+                        TopRightURL={ENDPOINTURL + "/jugador/jugadores/averageAge"}
+                        BottomLeftURL={ENDPOINTURL + "/quejas/quejas"}
+                        BottomRightURL={ENDPOINTURL + "/quejas/quejas/badQuejas"}
+                      />
                 {/*<ComponentBox
                     TopLeftURL= {ENDPOINTURL + "/jugador/jugadores"}
                     TopRightURL={ENDPOINTURL + "/jugador/jugadores/averageAge"}

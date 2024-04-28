@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 
-const ComponentBox = ({
+const LoadingComponent1 = ({
   TopLeftURL,
   TopRightURL,
   BottomLeftURL,
@@ -31,19 +31,25 @@ const ComponentBox = ({
           fetch(BottomLeftURL, { headers }),
           fetch(BottomRightURL, { headers }),
         ]);
+        
+      
 
         const data = await Promise.all(
           responses.map((response) => response.json())
         );
-        console.log(TopLeftURL, TopRightURL, BottomLeftURL, BottomRightURL, data);
+
+        
 
         setTopLeftData(data[0]);
        
         setTopRightData(data[1]);
         
-        setBottomLeftData(data[2], BottomLeftURL);
+        setBottomLeftData(data[2]);
         
-        setBottomRightData(data[3], BottomRightURL);
+        
+        setBottomRightData(data[3]);
+        
+        console.log(bottomRightData)
         
         setIsLoading(false);
       } catch (error) {
@@ -99,8 +105,8 @@ const ComponentBox = ({
         >
           <Box sx={{ width: "50%", height: "50%", display: "flex" }}>
             <div>
-              <h3 style={{...h3Style, marginTop: 30}}>Jugadores en linea</h3 >
-              <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}>{topLeftData.length}</h1>
+              <h3 style={{...h3Style, marginTop: 10}}>Jugadores en linea</h3 >
+              <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94, marginTop: 60}}>{topLeftData.length}</h1>
             </div>
           </Box>
           <Box
@@ -113,7 +119,7 @@ const ComponentBox = ({
           >
             {topRightData ? (
               <div>
-                <h3 style={{ ...h3Style, textAlign: "center", marginLeft: 50 }}>Niveles promedio completados {topRightData[0].name}</h3>
+                <h3 style={{ ...h3Style, textAlign: "center", marginLeft: 20 }}>Niveles promedio completados {topRightData[0].name}</h3>
                 
                 <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}>{parseInt(topRightData[0].average_levels_completed)}</h1>
               </div>
@@ -173,11 +179,11 @@ const ComponentBox = ({
   );
 };
 
-ComponentBox.propTypes = {
+LoadingComponent1.propTypes = {
   TopLeftURL: PropTypes.string,
   TopRightURL: PropTypes.string,
   BottomLeftURL: PropTypes.string,
   BottomRightURL: PropTypes.string,
 };
 
-export default ComponentBox;
+export default LoadingComponent1;
