@@ -21,12 +21,12 @@ const GraphLine = ({ data }) => {
       <div className="x-axis" />
       <div className="y-axis" />
 
-      <LineChart width={500} height={220} data={data}>
+      <LineChart width={500} height={280} data={data}>
         <CartesianGrid />
-        <XAxis dataKey="x" />
+        <XAxis dataKey="Hourly" />
         <YAxis yAxisId="left-axis" />
         <YAxis yAxisId="right-axis" orientation="right" />
-        <Line yAxisId="left-axis" type="monotone" dataKey="y" stroke="green" />
+        <Line yAxisId="left-axis" type="monotone" dataKey="ActiveUsers" stroke="green" />
         <Line yAxisId="right-axis" type="monotone" dataKey="z" stroke="red" />
       </LineChart>
     </div>

@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 import pfp from "../../assets/Default_pfp.jpg";
@@ -23,14 +23,29 @@ const SearchComponent = ({ children }) => {
 
 
   const [searchTerm, setSearchTerm] = React.useState('');
+  const [data, setData] = useState({});
 
-  const handleSearch = () => {
-    //Lo vamos a reemplazar por una query a la bd
-    console.log(`Searching for: ${searchTerm}`);
+  const token = localStorage.getItem("token");
+  const handleSearch = async () => {
+    try {
+      const URL = (`http://localhost:3000/jugador/jugadores/email/${searchTerm}`);
+
+      const headers = {
+        authorization: `Bearer ${token}`,
+      };
+      const response = await fetch( URL, {headers});
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const fetchedData = await response.json();
+      setData(fetchedData); // Update state with fetched data
+      console.log(fetchedData); // Log the data (or handle it as needed)
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
-
-
+  const userProfile = data[0] || {};
 
   return (
     <Stack direction="row" useFlexGap flexWrap="wrap">
@@ -41,10 +56,10 @@ const SearchComponent = ({ children }) => {
         line-height={"0px"}
       >
         <img src={pfp} alt="Profile Picture" width={175} height={175} />
-        <p style={{ fontSize: "15px", lineHeight: ".5" }}>
-          Nombre: {nombreTemp}
+        <p style={{ fontSize: "15px", lineHeight: ".5", overflow: "break-word"}}>
+          Nombre: {userProfile.name || nombreTemp}
         </p>
-        <p>ID: {idTemp}</p>
+        <p>ID: {userProfile.email || idTemp}</p>
       </Box>
       <Box
         marginLeft={"20px"}
@@ -54,17 +69,17 @@ const SearchComponent = ({ children }) => {
         line-height={"0px"}
       >
         <h2 style={{ fontSize: "25px", lineHeight: ".5" }}>
-          Tiempo Jugado Promedio
+          Dinero acumulado
         </h2>
-        <p>00:00:00</p>
+        <p>{userProfile.money || '0'}</p>
         <h2 style={{ fontSize: "25px", lineHeight: ".5" }}>
           ¿Alumno de Aulif?
         </h2>
-        <h3 style={alumnoStyle}>{alumnoAulif}</h3>
+        <h3 style={alumnoStyle}>{userProfile.isAulify || alumnoAulif}</h3>
         <h2 style={{ fontSize: "25px", lineHeight: ".5" }}>
           Curso más avanzado
         </h2>
-        <h3 style={cursoStyle}>{Curso}</h3>
+        <h3 style={cursoStyle}>{userProfile.currentCourse || Curso}</h3>
       </Box>
 
       <TextField

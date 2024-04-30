@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Header from "../components/Header";
 import GraphComponent from "../components/GraphComponent";
-import ComponentBox from "../components/ComponentBox/ComponentBox";
+
 import GraphLine from "../components/ComponentBox/GraphLine";
 
 import FilterComponent from "../components/FilterComponent";

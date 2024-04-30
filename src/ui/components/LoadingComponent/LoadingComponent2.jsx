@@ -26,6 +26,7 @@ const LoadingComponent2 = ({
         };
 
         const responses = await Promise.all([
+          //const responses = await Promise.all([
           fetch(TopLeftURL, { headers }),
           fetch(TopRightURL, { headers }),
           fetch(BottomLeftURL, { headers }),
@@ -41,6 +42,8 @@ const LoadingComponent2 = ({
        
         setTopRightData(data[1]);
         
+        
+        
         setBottomLeftData(data[2], BottomLeftURL);
         
         setBottomRightData(data[3], BottomRightURL);
@@ -55,6 +58,7 @@ const LoadingComponent2 = ({
     fetchData();
   }, [TopLeftURL, TopRightURL, BottomLeftURL, BottomRightURL]);
 
+  console.log("TopRightData", topRightData);
 
   const circleStyle = {
     position: "absolute",
@@ -111,12 +115,13 @@ const LoadingComponent2 = ({
               justifyContent: "end",
             }}
           >
-            {topRightData & topRightData.length < 0 ? (
+            {console.log(topRightData.length)}
+            {topRightData && topRightData.length > 0 ? (
               <div>
-                <h3 style={{ ...h3Style, textAlign: "center", marginLeft: 50 }}>Edad promedio  </h3>
+                <h3 style={{ ...h3Style, textAlign: "center", marginRight: 25, marginTop: 30 }}>Edad promedio </h3>
                 
                 
-                <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}></h1>
+                <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 80}}>{parseInt(topRightData[0].age)}</h1>
               </div>
             ) : (
               <div>No data available: Edad promedio</div>

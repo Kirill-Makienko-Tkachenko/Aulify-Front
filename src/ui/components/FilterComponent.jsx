@@ -11,7 +11,7 @@ const FilterComponent = ({ children }) => {
 
   // Función para manejar la navegación basada en el nivel de Python y si es para alumnos o no alumnos
   const handleNavigate = (level) => {
-    const baseRoute = location.pathname.includes('Alumnos') ? 'dashboardAlumnosPython' : 'dashboardNoAlumnosPython';
+    const baseRoute = location.pathname.includes('No') ? 'dashboardNoAlumnosPython' : 'dashboardAlumnosPython';
     navigate(`/${baseRoute}${level}`);
   };
 
