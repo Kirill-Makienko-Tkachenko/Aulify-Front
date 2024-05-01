@@ -18,7 +18,7 @@ const LeaderboardComponent = () => {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/highscore/highscores/top10');
+        const response = await fetch('http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com/highscore/highscores/top10');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

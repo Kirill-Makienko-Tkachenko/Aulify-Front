@@ -10,14 +10,11 @@ const GraphLine = ({ data }) => {
     <>
 
     <div className="buttons-container">
-      <br /><br /><br /><br />  
+
       </div>
       
     <div className="graph-line" >
-      {/* Buttons container */}
-      
-      
-      {/* ... rest of your component */}
+ 
       <div className="x-axis" />
       <div className="y-axis" />
 

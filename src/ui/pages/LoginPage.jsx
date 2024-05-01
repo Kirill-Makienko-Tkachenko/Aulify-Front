@@ -21,10 +21,10 @@ function LoginPage() {
     };
   
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com/login', {
         method: "POST",
         headers: {
-          "Content-Type": "application/json" // Set content type to JSON
+          "Content-Type": "application/json", // Set content type to JSON
         },
         body: JSON.stringify(formData) // Convert data to JSON string
       });
