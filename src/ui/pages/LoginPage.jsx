@@ -21,7 +21,7 @@ function LoginPage() {
     };
   
     try {
-      const response = await fetch('http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com/login', {
+      const response = await fetch('https://dsno4juwaj.execute-api.us-east-1.amazonaws.com/login', {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Set content type to JSON

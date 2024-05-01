@@ -28,7 +28,7 @@ const SearchComponent = ({ children }) => {
   const token = localStorage.getItem("token");
   const handleSearch = async () => {
     try {
-      const URL = (`http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com/jugador/jugadores/email/${searchTerm}`);
+      const URL = (`https://dsno4juwaj.execute-api.us-east-1.amazonaws.com/jugador/jugadores/email/${searchTerm}`);
 
       const headers = {
         authorization: `Bearer ${token}`,

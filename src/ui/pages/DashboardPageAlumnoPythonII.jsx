@@ -16,7 +16,7 @@ import LoadingComponent2 from "../components/LoadingComponent/LoadingComponent2"
 
 function DashboardAlumnoPythonII() {
 
-  const ENDPOINTURL = "http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com"
+  const ENDPOINTURL = "https://dsno4juwaj.execute-api.us-east-1.amazonaws.com"
   //const ENDPOINTURL = "http://localhost:3000"
 
   const [graphData, setGraphData] = useState([]);
