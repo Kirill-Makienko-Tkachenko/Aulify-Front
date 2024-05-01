@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Header from "../components/Header";
 import GraphComponent from "../components/GraphComponent";
-import ComponentBox from "../components/ComponentBox/ComponentBox";
+
 import GraphLine from "../components/ComponentBox/GraphLine";
 
 import FilterComponent from "../components/FilterComponent";
@@ -16,8 +16,8 @@ import LoadingComponent2 from "../components/LoadingComponent/LoadingComponent2"
 
 function DashboardAlumnoPythonII() {
 
-  //const ENDPOINTURL = "http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com"
-  const ENDPOINTURL = "http://localhost:3000"
+  const ENDPOINTURL = "http://api-aulify-env.eba-2c64ija4.us-east-1.elasticbeanstalk.com"
+  //const ENDPOINTURL = "http://localhost:3000"
 
   const [graphData, setGraphData] = useState([]);
 
