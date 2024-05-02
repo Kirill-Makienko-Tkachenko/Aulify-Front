@@ -25,28 +25,32 @@ const LoadingComponent2 = ({
           authorization: `Bearer ${token}`,
         };
 
+
         const responses = await Promise.all([
-          //const responses = await Promise.all([
           fetch(TopLeftURL, { headers }),
           fetch(TopRightURL, { headers }),
           fetch(BottomLeftURL, { headers }),
           fetch(BottomRightURL, { headers }),
         ]);
+        
+        
 
         const data = await Promise.all(
           responses.map((response) => response.json())
         );
-        console.log(TopLeftURL, TopRightURL, BottomLeftURL, BottomRightURL, data);
+
+   
 
         setTopLeftData(data[0]);
        
         setTopRightData(data[1]);
+
+        setBottomLeftData(data[2]);
         
         
+        setBottomRightData(data[3]);
         
-        setBottomLeftData(data[2], BottomLeftURL);
         
-        setBottomRightData(data[3], BottomRightURL);
         
         setIsLoading(false);
       } catch (error) {
@@ -115,7 +119,6 @@ const LoadingComponent2 = ({
               justifyContent: "end",
             }}
           >
-            {console.log(topRightData.length)}
             {topRightData && topRightData.length > 0 ? (
               <div>
                 <h3 style={{ ...h3Style, textAlign: "center", marginRight: 25, marginTop: 30 }}>Edad promedio </h3>
@@ -171,7 +174,7 @@ const LoadingComponent2 = ({
           </Box>
           <Box sx={circleStyle}>
           <p style={{ fontSize: "20px" }}>Puntaje actual: </p>
-            {}
+            {topLeftData.length + parseInt(topRightData[0].age) - bottomRightData.filter(item => item.Calificacion > 3).length + bottomLeftData.length}
             </Box>
         </Box>
       )}

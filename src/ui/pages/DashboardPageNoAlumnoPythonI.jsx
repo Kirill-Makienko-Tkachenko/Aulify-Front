@@ -62,11 +62,11 @@ function DashboardNoAlumnoPythonI() {
             <Grid item xs={4}>
               <GraphComponent>
                 <Box position="relative">
-                  <LoadingComponent1  
+                  {<LoadingComponent1  
                   TopLeftURL= {ENDPOINTURL + "/jugador/jugadores/online"}
                   TopRightURL={ENDPOINTURL + "/level/levels/1/game-completion"}
                   BottomLeftURL={ENDPOINTURL + "/level/levels/1/game-retention"}
-                  BottomRightURL={ENDPOINTURL + "/quejas/quejas"}/>
+                  BottomRightURL={ENDPOINTURL + "/quejas/quejas"}/>}
                    {/*  [x,x] Jugadores en linea - alumno y todos los jugadores
                         [x,x] Retencion en juegos - alumnos y todos los jugadores
                         [x] Promedio niveles completados - alumnos y todos los jugadores
@@ -79,12 +79,12 @@ function DashboardNoAlumnoPythonI() {
             <Grid item xs={4}>
               <GraphComponent>
                 <Box position="relative">
-                        <LoadingComponent2 
+                        {<LoadingComponent2 
                         TopLeftURL= {ENDPOINTURL + "/jugador/jugadores"}
                         TopRightURL={ENDPOINTURL + "/jugador/jugadores/averageAge"}
                         BottomLeftURL={ENDPOINTURL + "/quejas/quejas"}
                         BottomRightURL={ENDPOINTURL + "/quejas/quejas/badQuejas"}
-                      />
+                      />}
                 {/*<ComponentBox
                     TopLeftURL= {ENDPOINTURL + "/jugador/jugadores"}
                     TopRightURL={ENDPOINTURL + "/jugador/jugadores/averageAge"}

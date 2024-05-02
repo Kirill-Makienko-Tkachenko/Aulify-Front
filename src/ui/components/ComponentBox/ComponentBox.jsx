@@ -35,7 +35,6 @@ const ComponentBox = ({
         const data = await Promise.all(
           responses.map((response) => response.json())
         );
-        console.log(TopLeftURL, TopRightURL, BottomLeftURL, BottomRightURL, data);
 
         setTopLeftData(data[0]);
        

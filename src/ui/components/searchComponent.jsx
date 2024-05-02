@@ -39,7 +39,7 @@ const SearchComponent = ({ children }) => {
       }
       const fetchedData = await response.json();
       setData(fetchedData); // Update state with fetched data
-      console.log(fetchedData); // Log the data (or handle it as needed)
+
     } catch (error) {
       console.error("Error fetching data:", error);
     }

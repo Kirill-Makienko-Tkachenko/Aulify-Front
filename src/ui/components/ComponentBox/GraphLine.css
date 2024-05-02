@@ -43,6 +43,7 @@
   /* GraphLine.css */
 .buttons-container {
   display: flex;
-  justify-content: space-between; /* Space out the buttons */
-  margin-bottom: 20px; /* Add some space below the buttons */
+
+  justify-content: center; /* Space out the buttons */
+  margin-bottom: 5px; /* Add some space below the buttons */
 }

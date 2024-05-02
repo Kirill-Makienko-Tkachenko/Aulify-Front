@@ -25,6 +25,7 @@ const LoadingComponent1 = ({
           authorization: `Bearer ${token}`,
         };
 
+
         const responses = await Promise.all([
           fetch(TopLeftURL, { headers }),
           fetch(TopRightURL, { headers }),
@@ -32,26 +33,23 @@ const LoadingComponent1 = ({
           fetch(BottomRightURL, { headers }),
         ]);
         
-      
+        
 
         const data = await Promise.all(
           responses.map((response) => response.json())
         );
 
-        
+   
 
         setTopLeftData(data[0]);
        
         setTopRightData(data[1]);
         
         setBottomLeftData(data[2]);
-        
-        
+
         setBottomRightData(data[3]);
         
-        console.log(bottomRightData)
-        
-        setIsLoading(false);
+     setIsLoading(false);
       } catch (error) {
         setError(error);
         setIsLoading(false);
@@ -119,7 +117,7 @@ const LoadingComponent1 = ({
           >
             {topRightData ? (
               <div>
-                <h3 style={{ ...h3Style, textAlign: "center", marginLeft: 20 }}>Niveles promedio completados {topRightData[0].name}</h3>
+                <h3 style={{ ...h3Style, textAlign: "center", marginLeft: 20 }}>Niveles promedio completados {}</h3>
                 
                 <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}>{parseInt(topRightData[0].average_levels_completed)}</h1>
               </div>
@@ -136,7 +134,7 @@ const LoadingComponent1 = ({
               alignItems: "end",
             }}
           >
-            {bottomLeftData && bottomLeftData.average_time_seconds ? (
+            {bottomLeftData ? (
               <div>
                 <h1 style={{fontSize: "35px", textAlign: "left", color: "#04B100", marginRight: 50}}>
                   {Math.round(bottomLeftData.average_time_seconds / 60)} Minutos
@@ -171,7 +169,7 @@ const LoadingComponent1 = ({
           </Box>
           <Box sx={circleStyle}>
           <p style={{ fontSize: "20px" }}>Puntaje actual: </p>
-            {topLeftData.length + parseInt(topRightData[0].average_levels_completed) + bottomRightData.filter(item => item.Calificacion > 3).length + Math.round(bottomLeftData.average_time_seconds / 60)}
+            {topLeftData.length + bottomRightData.filter(item => item.Calificacion > 3).length + Math.round(bottomLeftData.average_time_seconds / 60)}
             </Box>
         </Box>
       )}

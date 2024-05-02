@@ -10,15 +10,16 @@ const GraphLine = ({ data }) => {
     <>
 
     <div className="buttons-container">
-
+    <h1>Cantidad de usuarios activos por hora</h1>
       </div>
       
     <div className="graph-line" >
  
       <div className="x-axis" />
       <div className="y-axis" />
+      
 
-      <LineChart width={500} height={280} data={data}>
+      <LineChart width={500} height={220} data={data}>
         <CartesianGrid />
         <XAxis dataKey="Hourly" />
         <YAxis yAxisId="left-axis" />
