@@ -43,7 +43,7 @@ function DashboardAlumnoPythonIII() {
 
     fetchData();
   }, []);
-  console.log(graphData);
+
   
   return (
     <>

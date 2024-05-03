@@ -62,7 +62,7 @@ const LoadingComponent2 = ({
     fetchData();
   }, [TopLeftURL, TopRightURL, BottomLeftURL, BottomRightURL]);
 
-  console.log("TopRightData", topRightData);
+
 
   const circleStyle = {
     position: "absolute",
