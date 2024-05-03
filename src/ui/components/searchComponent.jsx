@@ -40,7 +40,7 @@ const SearchComponent = ({ children }) => {
       });
   
       const response = await fetch(URL, {
-        method: 'POST', // Change method to POST if needed
+        method: 'GET', // Change method to POST if needed
         headers: headers,
         body: body
       });
