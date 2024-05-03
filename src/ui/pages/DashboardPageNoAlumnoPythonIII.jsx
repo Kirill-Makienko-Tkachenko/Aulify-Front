@@ -43,7 +43,7 @@ function DashboardNoAlumnoPythonIII() {
 
     fetchData();
   }, []);
-  console.log(graphData);
+
   
   return (
     <>

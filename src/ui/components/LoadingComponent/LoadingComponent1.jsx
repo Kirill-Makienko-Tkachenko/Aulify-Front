@@ -42,12 +42,15 @@ const LoadingComponent1 = ({
    
 
         setTopLeftData(data[0]);
-       
+     
+
         setTopRightData(data[1]);
+
         
         setBottomLeftData(data[2]);
 
         setBottomRightData(data[3]);
+
         
      setIsLoading(false);
       } catch (error) {
@@ -58,6 +61,8 @@ const LoadingComponent1 = ({
 
     fetchData();
   }, [TopLeftURL, TopRightURL, BottomLeftURL, BottomRightURL]);
+
+  console.log(topRightData);
 
 
   const circleStyle = {
@@ -119,7 +124,7 @@ const LoadingComponent1 = ({
               <div>
                 <h3 style={{ ...h3Style, textAlign: "center", marginLeft: 20 }}>Niveles promedio completados {}</h3>
                 
-                <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}>{parseInt(topRightData[0].average_levels_completed)}</h1>
+                <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94}}>{parseInt(topRightData.average_completion)}</h1>
               </div>
             ) : (
               <div>No data available</div>
