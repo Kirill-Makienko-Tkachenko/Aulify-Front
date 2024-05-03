@@ -28,23 +28,33 @@ const SearchComponent = ({ children }) => {
   const token = localStorage.getItem("token");
   const handleSearch = async () => {
     try {
-      const URL = (`https://dsno4juwaj.execute-api.us-east-1.amazonaws.com/jugador/jugadores/email/${searchTerm}`);
-
+      const URL = 'https://dsno4juwaj.execute-api.us-east-1.amazonaws.com/jugador/jugadores/email';
+  
       const headers = {
-        authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
       };
-      const response = await fetch( URL, {headers});
+  
+      const body = JSON.stringify({
+        email: searchTerm
+      });
+  
+      const response = await fetch(URL, {
+        method: 'POST', // Change method to POST if needed
+        headers: headers,
+        body: body
+      });
+  
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
       const fetchedData = await response.json();
       setData(fetchedData); // Update state with fetched data
-
+  
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-
   const userProfile = data[0] || {};
 
   return (
