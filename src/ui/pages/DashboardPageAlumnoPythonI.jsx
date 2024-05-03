@@ -16,8 +16,8 @@ import LoadingComponent2 from "../components/LoadingComponent/LoadingComponent2"
 
 function DashboardAlumnoPythonI() {
 
-  //const ENDPOINTURL = "https://dsno4juwaj.execute-api.us-east-1.amazonaws.com"
-  const ENDPOINTURL = "http://localhost:3000"
+  const ENDPOINTURL = "https://dsno4juwaj.execute-api.us-east-1.amazonaws.com"
+  //const ENDPOINTURL = "http://localhost:3000"
 
   const [graphData, setGraphData] = useState([]);
 
