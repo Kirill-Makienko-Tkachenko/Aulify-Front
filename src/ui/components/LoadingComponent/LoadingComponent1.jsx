@@ -23,6 +23,7 @@ const LoadingComponent1 = ({
       try {
         const headers = {
           authorization: `Bearer ${token}`,
+          contentType: "application/json",
         };
 
 
@@ -45,9 +46,11 @@ const LoadingComponent1 = ({
      
 
         setTopRightData(data[1]);
+        console.log("Estos son los datos de data[1]: ", data[1]);
 
         
         setBottomLeftData(data[2]);
+
 
         setBottomRightData(data[3]);
 
@@ -109,7 +112,7 @@ const LoadingComponent1 = ({
           <Box sx={{ width: "50%", height: "50%", display: "flex" }}>
             <div>
               <h3 style={{...h3Style, marginTop: 10}}>Jugadores en linea</h3 >
-              <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94, marginTop: 60}}>{topLeftData.length}</h1>
+              <h1 style={{fontSize: "40px", textAlign: "right", color: "#04B100", marginRight: 94, marginTop: 60}}>{topLeftData[0].player_count}</h1>
             </div>
           </Box>
           <Box
