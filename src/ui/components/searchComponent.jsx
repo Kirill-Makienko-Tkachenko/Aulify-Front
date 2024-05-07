@@ -28,7 +28,7 @@ const SearchComponent = ({ children }) => {
   const token = localStorage.getItem("token");
   const handleSearch = async () => {
     try {
-      const URL = 'https://dsno4juwaj.execute-api.us-east-1.amazonaws.com/jugador/jugadores/email';
+      const URL = 'https://t9u824koyl.execute-api.us-east-1.amazonaws.com/jugador/jugadores/email';
   
       const headers = {
         'Content-Type': 'application/json',

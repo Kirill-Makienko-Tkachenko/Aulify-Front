@@ -18,7 +18,7 @@ const LeaderboardComponent = () => {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        const response = await fetch('https://dsno4juwaj.execute-api.us-east-1.amazonaws.com/highscore/highscores/top10');
+        const response = await fetch('https://t9u824koyl.execute-api.us-east-1.amazonaws.com/highscore/highscores/top10');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
